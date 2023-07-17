@@ -20,7 +20,7 @@ public class ProductAccountService {
 
 
     public ProductAccount transformProductAccountRQ(ProductAccountRQ rq) {
-        ProductAccount ProductAccount = ec.edu.espe.arquitectura.wsproductospasivos.model.ProductAccount
+        ProductAccount productAccount = ProductAccount
                 .builder()
                 .name(rq.getName())
                 .temporalityAccountStatement(rq.getTemporalityAccountStatement())
@@ -30,24 +30,24 @@ public class ProductAccountService {
                 .minInterest(rq.getMinInterest())
                 .maxInterest(rq.getMaxInterest())
                 .build();
-        return ProductAccount;
+        return productAccount;
     }
 
-    public ProductAccountRS responseProductAccount(ProductAccount rq) {
+    public ProductAccountRS responseProductAccount(ProductAccount productAccount) {
         ProductAccountRS productAccountRS = ProductAccountRS
                 .builder()
-                .name(rq.getName())
-                .temporalityAccountStatement(rq.getTemporalityAccountStatement())
-                .maxOverDraft(rq.getMaxOverDraft())
-                .customerType(rq.getCustomerType())
-                .minOpeningBalance(rq.getMinOpeningBalance())
-                .minInterest(rq.getMinInterest())
-                .maxInterest(rq.getMaxInterest())
-                .state(rq.getState())
-                .creationDate(rq.getCreationDate())
-                .activationDate(rq.getActivationDate())
-                .lastModifiedDate(rq.getLastModifiedDate())
-                .closedDate(rq.getClosedDate())
+                .name(productAccount.getName())
+                .temporalityAccountStatement(productAccount.getTemporalityAccountStatement())
+                .maxOverDraft(productAccount.getMaxOverDraft())
+                .customerType(productAccount.getCustomerType())
+                .minOpeningBalance(productAccount.getMinOpeningBalance())
+                .minInterest(productAccount.getMinInterest())
+                .maxInterest(productAccount.getMaxInterest())
+                .state(productAccount.getState())
+                .creationDate(productAccount.getCreationDate())
+                .activationDate(productAccount.getActivationDate())
+                .lastModifiedDate(productAccount.getLastModifiedDate())
+                .closedDate(productAccount.getClosedDate())
                 .build();
         return productAccountRS;
     }
