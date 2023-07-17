@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "64b1a001a3e9df352ecc2134"
+  },
+  "uniqueKey": "c256f1b7-1c47-4b94-b7aa-00a17273d118",
+  "name": "BASIC SAVINGS PERSONAL ACCOUNT",
+  "temporalityAccountStatement": "MON",
+  "useCheckBook": "FALSE",
+  "allowOverDraft": "FALSE",
+  "allowTransferences": "TRUE",
+  "maxOverDraft": "0",
+  "customerType": "NAT",
+  "minOpeningBalance": "20",
+  "minInterest": "0.5",
+  "maxInterest": "2",
+  "state": "ACT",
+  "creationDate": "2023-07-14T14:20:10Z",
+  "activationDate": "NULL",
+  "lastModifiedDate": "2023-07-14T14:20:10Z",
+  "closedDate": "NULL",
+  "Product_Account_Type": [
+    {
+      "name": "PERSONAL CURRENT ACCOUNT",
+      "customerType": "NAT",
+      "superType": "DEP",
+      "temporalityInterest": "N/A",
+      "allowEarnInterest": "FALSE",
+      "allowAccountStatement": "TRUE",
+      "allowBranchTransactions": "TRUE",
+      "allowWithdrawal": "TRUE"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "64b1a267a3e9df352ecc2138"
+  },
+  "uniqueKey": "50adee17-f95f-403c-a52b-561233ede6a5",
+  "name": "BASIC SAVINGS BUSINESS ACCOUNT",
+  "temporalityAccountStatement": "MON",
+  "useCheckBook": "FALSE",
+  "allowOverDraft": "FALSE",
+  "allowTransferences": "TRUE",
+  "maxOverDraft": "0",
+  "customerType": "BUS",
+  "minOpeningBalance": "100",
+  "minInterest": "0.75",
+  "maxInterest": "3",
+  "state": "ACT",
+  "creationDate": "2023-07-14T14:20:10Z",
+  "activationDate": "NULL",
+  "lastModifiedDate": "2023-07-14T14:20:10Z",
+  "closedDate": "NULL",
+  "Product_Account_Type": [
+    {
+      "name": "BUSINESS CURRENT ACCOUNT",
+      "customerType": "BUS",
+      "superType": "DEP",
+      "temporalityInterest": "N/A",
+      "allowEarnInterest": "FALSE",
+      "allowAccountStatement": "TRUE",
+      "allowBranchTransactions": "TRUE",
+      "allowWithdrawal": "TRUE"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "64b1a267a3e9df352ecc2136"
+  },
+  "uniqueKey": "705f658d-54fd-4f72-85f6-d6020e814394",
+  "name": "BASIC CURRENT PERSONAL ACCOUNT",
+  "temporalityAccountStatement": "MON",
+  "useCheckBook": "FALSE",
+  "allowOverDraft": "FALSE",
+  "allowTransferences": "TRUE",
+  "maxOverDraft": "0",
+  "customerType": "NAT",
+  "minOpeningBalance": "100",
+  "minInterest": "0",
+  "maxInterest": "0",
+  "state": "ACT",
+  "creationDate": "2023-07-14T14:20:10Z",
+  "activationDate": "NULL",
+  "lastModifiedDate": "2023-07-14T14:20:10Z",
+  "closedDate": "NULL",
+  "Product_Account_Type": [
+    {
+      "name": "PERSONAL SAVINGS ACCOUNT",
+      "customerType": "NAT",
+      "superType": "DEP",
+      "temporalityInterest": "MON",
+      "allowEarnInterest": "TRUE",
+      "allowAccountStatement": "TRUE",
+      "allowBranchTransactions": "TRUE",
+      "allowWithdrawal": "TRUE"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "64b1a302a3e9df352ecc2137"
+  },
+  "uniqueKey": "93ea8fd4-1583-4b04-be8e-ad173ddd6e4d",
+  "name": "BASIC CURRENT BUSINESS ACCOUNT",
+  "temporalityAccountStatement": "MON",
+  "useCheckBook": "FALSE",
+  "allowOverDraft": "FALSE",
+  "allowTransferences": "TRUE",
+  "maxOverDraft": "0",
+  "customerType": "BUS",
+  "minOpeningBalance": "500",
+  "minInterest": "0",
+  "maxInterest": "0",
+  "state": "ACT",
+  "creationDate": "2023-07-14T14:20:10Z",
+  "activationDate": "NULL",
+  "lastModifiedDate": "2023-07-14T14:20:10Z",
+  "closedDate": "NULL",
+  "Product_Account_Type": [
+    {
+      "name": "BUSINESS SAVINGS ACCOUNT",
+      "customerType": "BUS",
+      "superType": "DEP",
+      "temporalityInterest": "MON",
+      "allowEarnInterest": "TRUE",
+      "allowAccountStatement": "TRUE",
+      "allowBranchTransactions": "TRUE",
+      "allowWithdrawal": "TRUE"
+    }
+  ]
+}]
