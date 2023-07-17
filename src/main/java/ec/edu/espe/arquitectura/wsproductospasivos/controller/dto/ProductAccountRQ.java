@@ -17,9 +17,4 @@ public class ProductAccountRQ {
     private BigDecimal minOpeningBalance;
     private BigDecimal minInterest;
     private BigDecimal maxInterest;
-    private String state;
-    private Timestamp creationDate;
-    private Timestamp activationDate;
-    private Timestamp lastModifiedDate;    
-    private Timestamp closedDate;
 }
