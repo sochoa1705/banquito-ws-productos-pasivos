@@ -1,7 +1,6 @@
 package ec.edu.espe.arquitectura.wsproductospasivos.model;
 
 import java.math.BigDecimal;
-import java.security.Timestamp;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;

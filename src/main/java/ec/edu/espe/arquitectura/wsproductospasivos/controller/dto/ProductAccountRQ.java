@@ -1,7 +1,6 @@
 package ec.edu.espe.arquitectura.wsproductospasivos.controller.dto;
 
 import java.math.BigDecimal;
-import java.security.Timestamp;
 
 
 import lombok.Builder;
