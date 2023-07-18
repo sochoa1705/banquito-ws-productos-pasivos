@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 
+import ec.edu.espe.arquitectura.wsproductospasivos.model.ProductAccountType;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,9 +14,6 @@ public class ProductAccountRS {
 
     private String name;
     private String temporalityAccountStatement;
-    private Boolean useCheckbook;
-    private Boolean allowOverDraft;
-    private Boolean allowTransferences;
     private BigDecimal maxOverDraft;
     private String customerType;
     private BigDecimal minOpeningBalance;
@@ -26,5 +24,6 @@ public class ProductAccountRS {
     private Date activationDate;
     private Date lastModifiedDate;
     private Date closedDate;
+    private ProductAccountType productType;
     
 }

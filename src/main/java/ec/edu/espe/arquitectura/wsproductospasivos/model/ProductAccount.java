@@ -4,16 +4,19 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-@Document("productAccount")
+@Document(collection = "productAccount")
 public class ProductAccount {
     @Id
     private String id;
+    @Indexed(unique = true)
     private String uniqueKey;
     private String name;
     private String temporalityAccountStatement;
@@ -30,5 +33,5 @@ public class ProductAccount {
     private Date activationDate;
     private Date lastModifiedDate;
     private Date closedDate;
-    private ProductAccountType productAccountType;
+    private ProductAccountType productType;
 }
