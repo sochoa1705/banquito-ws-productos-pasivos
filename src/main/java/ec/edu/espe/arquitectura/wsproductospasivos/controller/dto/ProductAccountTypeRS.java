@@ -10,4 +10,8 @@ public class ProductAccountTypeRS {
     private String customerType;
     private String superType;
     private String temporalityInterest;
+    private Boolean allowEarnInterest;
+    private Boolean allowAccountStatement;
+    private Boolean allowBranchTransactions;
+    private Boolean allowWithdrawal;
 }

@@ -2,6 +2,7 @@ package ec.edu.espe.arquitectura.wsproductospasivos.controller;
 
 import java.util.List;
 
+import ec.edu.espe.arquitectura.wsproductospasivos.controller.dto.ProductAccountTypeRS;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,13 +35,19 @@ public class ProductAccountController {
     }
     
     @GetMapping("/{uniqueKey}/{state}")
-    public ResponseEntity<ProductAccountRS> obtainByUnqueKeyAndState(@PathVariable("uniqueKey") String uniqueKey,
+    public ResponseEntity<ProductAccountRS> obtainByUniqueKeyAndState(@PathVariable("uniqueKey") String uniqueKey,
             @PathVariable("state") String state) {
         if (state.equals("ACT")) {
             ProductAccountRS productAccountRS = this.service.obtainProductByUniqueKeyAndState(uniqueKey, state);
             return ResponseEntity.ok(productAccountRS);
         }else return ResponseEntity.notFound().build();
 
+    }
+
+    @GetMapping("/types")
+    public ResponseEntity<List<ProductAccountTypeRS>> obtainProductTypes(){
+        List<ProductAccountTypeRS> productTypes = this.service.obtainAllProductTypes();
+        return ResponseEntity.ok(productTypes);
     }
 
     

@@ -1,9 +1,10 @@
 package ec.edu.espe.arquitectura.wsproductospasivos.controller.dto;
 
 import java.math.BigDecimal;
-import java.security.Timestamp;
+import java.util.Date;
 
 
+import ec.edu.espe.arquitectura.wsproductospasivos.model.ProductAccountType;
 import lombok.Builder;
 import lombok.Data;
 
@@ -19,9 +20,10 @@ public class ProductAccountRS {
     private BigDecimal minInterest;
     private BigDecimal maxInterest;
     private String state;
-    private Timestamp creationDate;
-    private Timestamp activationDate;
-    private Timestamp lastModifiedDate;    
-    private Timestamp closedDate;
+    private Date creationDate;
+    private Date activationDate;
+    private Date lastModifiedDate;
+    private Date closedDate;
+    private ProductAccountType productType;
     
 }

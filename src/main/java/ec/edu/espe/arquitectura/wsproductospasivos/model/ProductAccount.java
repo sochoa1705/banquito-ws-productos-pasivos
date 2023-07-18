@@ -1,7 +1,7 @@
 package ec.edu.espe.arquitectura.wsproductospasivos.model;
 
 import java.math.BigDecimal;
-import java.security.Timestamp;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -13,7 +13,7 @@ import lombok.Data;
 @Data
 @Builder
 @Document(collection = "productAccount")
-public class productAccount {
+public class ProductAccount {
     @Id
     private String id;
     @Indexed(unique = true)
@@ -29,9 +29,9 @@ public class productAccount {
     private BigDecimal minInterest;
     private BigDecimal maxInterest;
     private String state;
-    private Timestamp creationDate;
-    private Timestamp activationDate;
-    private Timestamp lastModifiedDate;    
-    private Timestamp closedDate; 
-    private ProductAccountType Private_Account_Type;
+    private Date creationDate;
+    private Date activationDate;
+    private Date lastModifiedDate;
+    private Date closedDate;
+    private ProductAccountType productType;
 }
