@@ -8,7 +8,6 @@ import ec.edu.espe.arquitectura.wsproductospasivos.model.ProductAccount;
 import ec.edu.espe.arquitectura.wsproductospasivos.model.ProductAccountType;
 import org.springframework.stereotype.Service;
 
-import ec.edu.espe.arquitectura.wsproductospasivos.controller.dto.ProductAccountRQ;
 import ec.edu.espe.arquitectura.wsproductospasivos.controller.dto.ProductAccountRS;
 import ec.edu.espe.arquitectura.wsproductospasivos.repository.ProductAccountRepository;
 
@@ -67,20 +66,6 @@ public class ProductAccountService {
     
 
 
-    public ProductAccount transformProductAccountRQ(ProductAccountRQ rq){
-        ProductAccount productAccount = ec.edu.espe.arquitectura.wsproductospasivos.model.ProductAccount
-                .builder()
-                .name(rq.getName())
-                .temporalityAccountStatement(rq.getTemporalityAccountStatement())
-                .maxOverDraft(rq.getMaxOverDraft())
-                .customerType(rq.getCustomerType())
-                .minOpeningBalance(rq.getMinOpeningBalance())
-                .minInterest(rq.getMinInterest())
-                .maxInterest(rq.getMaxInterest())
-                .state(rq.getState())
-                .build();
-        return productAccount;
-    }
 
     public ProductAccountRS responseProductAccount(ProductAccount rq){
         ProductAccountRS productAccountRS = ProductAccountRS
