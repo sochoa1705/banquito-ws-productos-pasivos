@@ -13,9 +13,6 @@ public class ProductAccountRS {
 
     private String name;
     private String temporalityAccountStatement;
-    private Boolean useCheckbook;
-    private Boolean allowOverDraft;
-    private Boolean allowTransferences;
     private BigDecimal maxOverDraft;
     private String customerType;
     private BigDecimal minOpeningBalance;

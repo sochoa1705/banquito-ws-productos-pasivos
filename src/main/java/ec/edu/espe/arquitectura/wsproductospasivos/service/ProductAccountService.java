@@ -1,5 +1,6 @@
 package ec.edu.espe.arquitectura.wsproductospasivos.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +20,37 @@ public class ProductAccountService {
     public ProductAccountService(ProductAccountRepository productAccountRepository) {
         this.productAccountRepository = productAccountRepository;
     }
+
+    public List<ProductAccountRS> getAllProductService(){
+        List<productAccount> Products = this.productAccountRepository.findAll();
+        List<ProductAccountRS> ProductList = new ArrayList<>();
+        for(productAccount Product : Products){
+            ProductList.add(this.responseProductAccount(Product));
+        }
+        return ProductList;
+    }
+
+    public ProductAccountRS obtainLoanProductByUniqueKey(String uniqueKey) {
+        try {
+            productAccount product = this.productAccountRepository.findByUniqueKey(uniqueKey);
+            ProductAccountRS response = responseProductAccount(product);
+            return response;
+        } catch (RuntimeException rte) {
+            throw new RuntimeException("Error al obtener loan product", rte);
+        }
+    }
+
+    public ProductAccountRS obtainProductByUniqueKeyAndState(String uniqueKey,String state) {
+        try {
+            productAccount product = this.productAccountRepository.findByUniqueKeyAndState(uniqueKey,state);
+            ProductAccountRS response = responseProductAccount(product);
+            return response;
+        } catch (RuntimeException rte) {
+            throw new RuntimeException("Error al obtener loan product", rte);
+        }
+    }
+
+    
 
 
     public productAccount transformProductAccountRQ(ProductAccountRQ rq){
@@ -64,15 +96,9 @@ public class ProductAccountService {
         return this.productAccountRepository.findByUniqueKey(uniqueKey);
     }
 
-    public productAccount obtainByName(String name){
-        return this.productAccountRepository.findByName(name);
-    }
+    
 
-    public List<productAccount> obtainByState(String state){
-        return this.productAccountRepository.findByState(state);
-    }
+    
 
-    public productAccount obtainBySuperType(String superType){
-        return this.productAccountRepository.findProductAccountTypeBySuperType(superType);
-    }
+    
 }

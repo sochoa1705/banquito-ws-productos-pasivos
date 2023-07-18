@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.security.Timestamp;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Builder;
@@ -11,10 +12,11 @@ import lombok.Data;
 
 @Data
 @Builder
-@Document("productAccount")
+@Document(collection = "productAccount")
 public class productAccount {
     @Id
     private String id;
+    @Indexed(unique = true)
     private String uniqueKey;
     private String name;
     private String temporalityAccountStatement;
@@ -31,6 +33,5 @@ public class productAccount {
     private Timestamp activationDate;
     private Timestamp lastModifiedDate;    
     private Timestamp closedDate; 
-
-    private Private_Account_Type Private_Account_Type;
+    private ProductAccountType Private_Account_Type;
 }

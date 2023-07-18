@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ec.edu.espe.arquitectura.wsproductospasivos.model.productAccount;
+import ec.edu.espe.arquitectura.wsproductospasivos.controller.dto.ProductAccountRS;
 import ec.edu.espe.arquitectura.wsproductospasivos.service.ProductAccountService;
 
 @RestController
@@ -21,26 +21,27 @@ public class ProductAccountController {
     }
 
     @GetMapping("/{uniqueKey}")
-    public ResponseEntity<productAccount> findByUniqueKey(@PathVariable("uniqueKey") String uniqueKey) {
-        productAccount rs = this.service.obtainByUniqueKey(uniqueKey);
+    public ResponseEntity<ProductAccountRS> findByUniqueKey(@PathVariable("uniqueKey") String uniqueKey) {
+        ProductAccountRS rs = this.service.obtainLoanProductByUniqueKey(uniqueKey);
         return ResponseEntity.ok(rs);
     }
 
-    @GetMapping("/name/{name}")
-    public ResponseEntity<productAccount> findByName(@PathVariable("name") String name) {
-        productAccount rs = this.service.obtainByName(name);
-        return ResponseEntity.ok(rs);
-    }
-
-    @GetMapping("/state/{state}")
-    public ResponseEntity<List<productAccount>> findByState(@PathVariable("state") String state) {
-        List<productAccount> rs = this.service.obtainByState(state);
-        return ResponseEntity.ok(rs);
+    
+    @GetMapping("/all")
+    public ResponseEntity<List<ProductAccountRS>> getAll(){
+        List<ProductAccountRS> products = this.service.getAllProductService();
+        return ResponseEntity.ok(products);
     }
     
-    @GetMapping("/product-account/{superType}")
-    public ResponseEntity<productAccount> findProductAccountBySuperType(@PathVariable("superType") String superType){
-         productAccount rs = this.service.obtainBySuperType(superType);
-         return ResponseEntity.ok(rs);
+    @GetMapping("/{uniqueKey}/{state}")
+    public ResponseEntity<ProductAccountRS> obtainByUnqueKeyAndState(@PathVariable("uniqueKey") String uniqueKey,
+            @PathVariable("state") String state) {
+        if (state.equals("ACT")) {
+            ProductAccountRS productAccountRS = this.service.obtainProductByUniqueKeyAndState(uniqueKey, state);
+            return ResponseEntity.ok(productAccountRS);
+        }else return ResponseEntity.notFound().build();
+
     }
+
+    
 }
