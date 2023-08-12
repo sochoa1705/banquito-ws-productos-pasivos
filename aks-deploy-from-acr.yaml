@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banquito-ws-productos-pasivos
+  labels:
+    app: banquito-ws-productos-pasivos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: banquito-ws-productos-pasivos
+  template:
+    metadata:
+      name: banquito-ws-productos-pasivos
+      labels:
+        app: banquito-ws-productos-pasivos
+    spec:
+      containers:
+        - name: banquito-ws-productos-pasivos
+          image: g2acrrepo.azurecr.io/sochoa1705/banquito-ws-productos-pasivos:#{Build.BuildId}#
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8085
+  # service as a load balancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: banquito-ws-productos-pasivos
+    k8s-app: banquito-ws-productos-pasivos
+  name: banquito-ws-productos-pasivos
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8085
+  type: LoadBalancer
+  selector:
+    app: banquito-ws-productos-pasivos
+
+
+      
