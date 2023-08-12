@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: banquito-ws-productos-pasivos
-          image: g2acrrepo.azurecr.io/sochoa1705/banquito-ws-productos-pasivos:#{Build.BuildId}#
+          image: g2acrrepo.azurecr.io/sochoa1705/banquito-ws-productos-pasivos:sochoa1705/banquito-ws-productos-pasivos
           imagePullPolicy: Always
           ports:
             - containerPort: 8085
@@ -33,7 +33,7 @@ metadata:
 spec:
   ports:
     - name: http
-      port: 80
+      port: 8080
       protocol: TCP
       targetPort: 8085
   type: LoadBalancer
