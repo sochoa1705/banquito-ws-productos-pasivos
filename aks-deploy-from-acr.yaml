@@ -17,28 +17,11 @@ spec:
     spec:
       containers:
         - name: banquito-ws-productos-pasivos
-          image: g2acrrepo.azurecr.io/sochoa1705/banquito-ws-productos-pasivos:sochoa1705/banquito-ws-productos-pasivos
+          image: g2acrrepo.azurecr.io/sochoa1705/banquito-ws-productos-pasivos:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8085
-  # service as a load balancer
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: banquito-ws-productos-pasivos
-    k8s-app: banquito-ws-productos-pasivos
-  name: banquito-ws-productos-pasivos
-spec:
-  ports:
-    - name: http
-      port: 8080
-      protocol: TCP
-      targetPort: 8085
-  type: LoadBalancer
-  selector:
-    app: banquito-ws-productos-pasivos
+            - containerPort: 8080
+
 
 
       

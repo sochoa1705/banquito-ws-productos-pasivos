@@ -3,6 +3,8 @@ package ec.edu.espe.arquitectura.wsproductospasivos.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,6 +13,8 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Document(collection = "productAccount")
 public class ProductAccount {
