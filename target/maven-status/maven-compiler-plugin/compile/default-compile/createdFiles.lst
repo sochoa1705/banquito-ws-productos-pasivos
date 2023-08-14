@@ -1,0 +1,12 @@
+ec\edu\espe\arquitectura\wsproductospasivos\model\ProductAccount.class
+ec\edu\espe\arquitectura\wsproductospasivos\model\ProductAccountType.class
+ec\edu\espe\arquitectura\wsproductospasivos\service\ProductAccountService.class
+ec\edu\espe\arquitectura\wsproductospasivos\controller\dto\ProductAccountTypeRS.class
+ec\edu\espe\arquitectura\wsproductospasivos\WsProductosPasivosApplication.class
+ec\edu\espe\arquitectura\wsproductospasivos\model\ProductAccount$ProductAccountBuilder.class
+ec\edu\espe\arquitectura\wsproductospasivos\repository\ProductAccountRepository.class
+ec\edu\espe\arquitectura\wsproductospasivos\controller\dto\ProductAccountRS.class
+ec\edu\espe\arquitectura\wsproductospasivos\controller\ProductAccountController.class
+ec\edu\espe\arquitectura\wsproductospasivos\controller\dto\ProductAccountTypeRS$ProductAccountTypeRSBuilder.class
+ec\edu\espe\arquitectura\wsproductospasivos\model\ProductAccountType$ProductAccountTypeBuilder.class
+ec\edu\espe\arquitectura\wsproductospasivos\controller\dto\ProductAccountRS$ProductAccountRSBuilder.class
