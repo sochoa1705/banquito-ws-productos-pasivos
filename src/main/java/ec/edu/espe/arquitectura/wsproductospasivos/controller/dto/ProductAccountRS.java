@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 public class ProductAccountRS {
 
     private String name;
+    private String uniqueKey;
     private String temporalityAccountStatement;
     private BigDecimal maxOverDraft;
     private String customerType;

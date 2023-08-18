@@ -71,6 +71,7 @@ public class ProductAccountService {
         ProductAccountRS productAccountRS = ProductAccountRS
                 .builder()
                 .name(rq.getName())
+                .uniqueKey(rq.getUniqueKey())
                 .temporalityAccountStatement(rq.getTemporalityAccountStatement())
                 .maxOverDraft(rq.getMaxOverDraft())
                 .customerType(rq.getCustomerType())
