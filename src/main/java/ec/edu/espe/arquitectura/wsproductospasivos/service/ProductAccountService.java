@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 
 import ec.edu.espe.arquitectura.wsproductospasivos.controller.dto.ProductAccountRS;
 import ec.edu.espe.arquitectura.wsproductospasivos.repository.ProductAccountRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @Service
+
 public class ProductAccountService {
     private final ProductAccountRepository productAccountRepository;
     
@@ -63,9 +65,14 @@ public class ProductAccountService {
 
     }
 
-    
-
-
+    public String obtainProductNameByUniqueKey(String uniqueKey) {
+        try {
+            ProductAccount product = this.productAccountRepository.findByUniqueKey(uniqueKey);
+            return product.getName();
+        } catch (RuntimeException rte) {
+            throw new RuntimeException("Error al obtener loan product", rte);
+        }
+    }
 
     public ProductAccountRS responseProductAccount(ProductAccount rq){
         ProductAccountRS productAccountRS = ProductAccountRS

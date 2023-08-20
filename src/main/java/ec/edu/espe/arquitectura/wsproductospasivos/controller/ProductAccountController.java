@@ -4,6 +4,7 @@ import java.util.List;
 
 import ec.edu.espe.arquitectura.wsproductospasivos.controller.dto.ProductAccountTypeRS;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import ec.edu.espe.arquitectura.wsproductospasivos.controller.dto.ProductAccount
 import ec.edu.espe.arquitectura.wsproductospasivos.service.ProductAccountService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/v1/product-account")
 public class ProductAccountController {
     private final ProductAccountService service;
@@ -42,6 +44,12 @@ public class ProductAccountController {
             return ResponseEntity.ok(productAccountRS);
         }else return ResponseEntity.notFound().build();
 
+    }
+
+    @GetMapping("/name/{uniqueKey}")
+    public ResponseEntity<String> obtainProductNameByUniqueKey(@PathVariable("uniqueKey") String uniqueKey) {
+        String name = this.service.obtainProductNameByUniqueKey(uniqueKey);
+        return ResponseEntity.ok(name);
     }
 
     @GetMapping("/types")
